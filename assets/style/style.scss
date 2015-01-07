@@ -1,3 +1,6 @@
+@import '../fonts/title/index.scss';
+@import '../fonts/read/index.scss';
+
 * { box-sizing: border-box; }
 
 body {
@@ -37,7 +40,7 @@ section {
 }
 
 h1 {
-	font-family: "Knockout Z@PP";
+	font-family: "Title";
 	font-size: 36px;
 	font-weight: 400;
 	text-transform: uppercase;
@@ -46,7 +49,7 @@ h1 {
 }
 
 h2 {
-	font-family: "Knockout Z@PP";
+	font-family: "Title";
 	font-weight: 500;
 	font-size: 18px;
 	letter-spacing: 3px;
@@ -61,7 +64,7 @@ h2 {
 }
 
 h3 {
-	font-family: "Proxima Nova";
+	font-family: "Read";
 	font-weight: 100;
 	margin: 4px 0;
 }
@@ -164,7 +167,7 @@ a {
 
 	.download {
 		h4 {
-			font-family: "Proxima Nova";
+			font-family: "Read";
 			font-size: 18px;
 			margin-top: 48px;
 			margin-bottom: 0;
@@ -205,7 +208,7 @@ a {
 
 			span {
 				text-align: left;
-				font-family: "Proxima Nova";
+				font-family: "Read";
 				font-size: 42px;
 				text-transform: none;
 				padding: 6px 8px;
@@ -222,7 +225,7 @@ a {
 
 		h1 {
 			text-align: left;
-			font-family: "Proxima Nova";
+			font-family: "Read";
 			font-size: 42px;
 			text-transform: none;
 			padding: 6px 8px;

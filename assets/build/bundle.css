@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'Title';
+  src: url('/assets/fonts/title/title.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Title';
+  src: url('/assets/fonts/title/title.otf') format('opentype'), url('/assets/fonts/title/title.woff') format('woff'), url('/assets/fonts/title/title.ttf') format('truetype'), url('/assets/fonts/title/title.svg#title') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Read';
+  src: url('/assets/fonts/read/read.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/read/read.otf') format('opentype'), url('/assets/fonts/read/read.woff') format('woff'), url('/assets/fonts/read/read.ttf') format('truetype'), url('/assets/fonts/read/read.svg#Read') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
 * {
   box-sizing: border-box; }
 
@@ -61,7 +79,7 @@ section {
   padding: 8px; }
 
 h1 {
-  font-family: "Knockout Z@PP";
+  font-family: "Title";
   font-size: 36px;
   font-weight: 400;
   text-transform: uppercase;
@@ -69,7 +87,7 @@ h1 {
   margin: 24px 0 18px; }
 
 h2 {
-  font-family: "Knockout Z@PP";
+  font-family: "Title";
   font-weight: 500;
   font-size: 18px;
   letter-spacing: 3px;
@@ -83,7 +101,7 @@ h2 {
   text-align: center; }
 
 h3 {
-  font-family: "Proxima Nova";
+  font-family: "Read";
   font-weight: 100;
   margin: 4px 0; }
 
@@ -147,7 +165,7 @@ a {
 .resume .thumb img {
   width: 70%; }
 .resume .download h4 {
-  font-family: "Proxima Nova";
+  font-family: "Read";
   font-size: 18px;
   margin-top: 48px;
   margin-bottom: 0; }
@@ -169,7 +187,7 @@ a {
 
 			span {
 				text-align: left;
-				font-family: "Proxima Nova";
+				font-family: "Read";
 				font-size: 42px;
 				text-transform: none;
 				padding: 6px 8px;
@@ -194,7 +212,7 @@ a {
     width: 100%; }
   .post header h1 {
     text-align: left;
-    font-family: "Proxima Nova";
+    font-family: "Read";
     font-size: 42px;
     text-transform: none;
     padding: 6px 8px;

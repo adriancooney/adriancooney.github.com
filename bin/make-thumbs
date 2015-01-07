@@ -12,9 +12,9 @@ createThumbs() {
 	POST_DIR=${INPUT_FILE%$POST_FILENAME}
 	FILETYPE='.jpg'
 
-	convert $INPUT_FILE -resize 180x180 "$POST_DIR/Cover-small$FILETYPE"
-	convert $INPUT_FILE -resize 350x350 "$POST_DIR/Cover-large$FILETYPE"
-	convert $INPUT_FILE -quality 75 "$POST_DIR/Cover-full$FILETYPE"
+	convert $INPUT_FILE -resize 180x180 -background white -flatten "$POST_DIR/Cover-small$FILETYPE"
+	convert $INPUT_FILE -resize 350x350 -background white -flatten "$POST_DIR/Cover-large$FILETYPE"
+	convert $INPUT_FILE -quality 75 -background white -flatten "$POST_DIR/Cover-full$FILETYPE"
 
 	return 0
 }

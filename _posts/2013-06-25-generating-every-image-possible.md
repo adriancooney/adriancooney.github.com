@@ -1,9 +1,10 @@
 ---
 layout: post
+name: limiting-the-infinite
 title: Generating every image possible.
 subtitle: Or limiting the infinite.
 synopsis: Imagine owning every photo that has ever been taken and that ever will be taken. This post analyzes that statement and produces some ridiculous notions.
-banner: /assets/image/posts/limiting-the-infinite/cover.jpeg
+banner: /assets/image/posts/limiting-the-infinite/Cover.jpeg
 ---
 
 <section>

@@ -1,9 +1,9 @@
 ---
 layout: post
+name: understanding-this
 title: Understanding 'this'.
 subtitle: My take on the infamously hard concept to grasp.
 synopsis: I remember the days trying to grasp the concept of <em>this</em> in Javascript when I first delved into Object Oriented Programming (OOP). Admittedly, it did take me quite a while to wrap my head around the concept.
-banner: /assets/image/posts/understanding-this/cover.png
 ---
 
 <p>I remember the days trying to grasp the concept of <em>this</em> in Javascript when I first delved into Object Oriented Programming (OOP). Admittedly, it did take me quite a while to wrap my head around the concept but I felt as though it was attributed to the reading material rather than my own learning ability. I finally understood it when I realized I had already learned the concept many years ago, just not in a <em>programming context </em>but in linguistics<em>. </em>We all understand <em>this</em>, it's just bridging the gap that's hard. The following post uses Javascript but the samples used are extremely basic and can be applied to all OOP languages (such as Python or Java).</p>

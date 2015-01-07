@@ -1,5 +1,6 @@
 ---
 layout: post
+name: movie-plots
 title: Movie plots, literally.
 subtitle: Let's try graph cinematography.
 synopsis: So Apple has radically changed the look of iOS to align itself with the "flat" design trend. This post explores my initial thoughts on booting up iOS7.

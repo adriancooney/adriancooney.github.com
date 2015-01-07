@@ -17,6 +17,12 @@ kramdown:
 defaults:
   -
     scope:
+      path: ""
+    values:
+      asset_path: /assets
+      image_assets: /assets/image
+  -
+    scope:
       path: ""      # empty string for all files
       type: posts    # limit to posts
     values:

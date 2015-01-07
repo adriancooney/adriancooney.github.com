@@ -1,0 +1,26 @@
+#!/usr/local/bin/bash
+
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+POSTS_DIR='/../assets/image/posts'
+COVERS=$(find "$DIR/$POSTS_DIR" -name Cover.*)
+
+createThumbs() {
+	echo 'Creating small thumb..'
+
+	INPUT_FILE=$1
+	POST_FILENAME=$(basename $INPUT_FILE)
+	POST_DIR=${INPUT_FILE%$POST_FILENAME}
+	FILETYPE='.jpg'
+
+	convert $INPUT_FILE -resize 180x180 "$POST_DIR/Cover-small$FILETYPE"
+	convert $INPUT_FILE -resize 350x350 "$POST_DIR/Cover-large$FILETYPE"
+	convert $INPUT_FILE -quality 75 "$POST_DIR/Cover-full$FILETYPE"
+
+	return 0
+}
+
+IFS=$'\n'
+for cover in $COVERS
+do
+	createThumbs $cover
+done

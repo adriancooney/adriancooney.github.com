@@ -1,14 +1,13 @@
 ---
 layout: post
+name: bezier-interpolation
 title: Bezier Interpolation
 subtitle: It's really not that hard.
 synopsis: After becoming frustrated with Apple's SpriteKit and it's lack of features, I decided to go all out and implement the missing features myself. Of these features, the most fun was overly complicated bezier interpolation.
-banner: /assets/image/posts/bezier-interpolation/Cover.jpg
 banner_attribution: 
   text: Elise Blaha
   link: http://eliseblaha.typepad.com/golden/2011/04/project-5-of-26-a-decorative-ampersand.html
 ---
-
 
 <p>After becoming frustrated with Apple's SpriteKit and it's lack of features, I decided to go all out and implement the missing ones myself. One of these features Apple “forgot” to implement (or half-assedly implemented )was easing on their animations. When my needs eventually called for easing along a specific path, I was flat out of luck. Although easing in itself is relatively easy to implement when moving objects from A to B in a straight line, moving along a curve is another story entirely. So I set out to learn about bezier curves. It's wasn't a particularly fun task because most of the online resources were either to verbose or just showed unhelpful snippets of code with loads of tiny, unlabeled variables. Then, which should have been my first stop, I stumbled on <a target="_blank" href="http://en.wikipedia.org/wiki/B%C3%A9zier_curve" rel="nofollow">Bezier Curves on Wikipedia</a> and it all clicked when I hit this gif.</p>
 

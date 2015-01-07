@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>The Anatomy of a Reddit Post - exported from Medium</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 20px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 18px;
+      }
+      </style></head><body><article>
+<header>
+<h1>The Anatomy of a Reddit Post</h1>
+</header>
+<section data-field="body">
+<section class=" section--first"><div class="section-divider layoutSingleColumn"><hr class="section-divider"></div><div class="section-content"><div class="section-inner layoutSingleColumn"><h2 name="title" class="graf--h2 graf--first"><a id="title"></a>The Anatomy of a Reddit Post</h2><p class="graf--p graf--empty"><br></p><p name="89fd" class="graf--p graf--last"><a id="89fd"></a>I’ve recently been creating a game involving Reddit where you bet your useless internet points called <em class="markup--em markup--p-em">karma</em> on posts to win other useless points called <em class="markup--em markup--p-em">Karmo. </em>To calculate the odds for the betting in a fair way, I needed to study the submissions to see what makes and breaks a post so over the last two days, I harvested as much data as possible on a large sample of Reddit posts over a period of time. Here is the results that I came up with. If graphs or hardcore stats turn you on, this should be a good read. All the code and (practical) data scraped is <a href="/r/?url=https%3A%2F%2Fgithub.com%2Fdunxrion%2Fredditstat" data-href="/r/?url=https%3A%2F%2Fgithub.com%2Fdunxrion%2Fredditstat" class="markup--anchor markup--p-anchor">available on Github</a> if you want to try make sense of it.</p></div></div></section><section name="9fa4" class=" section--last"><div class="section-divider layoutSingleColumn"><hr class="section-divider"></div><div class="section-content"><div class="section-inner layoutSingleColumn"><h4 name="c791" class="graf--h4 graf--first"><a id="c791"></a>Harvesting the data</h4><p name="48c7" class="graf--p"><a id="48c7"></a>Retrieving the data was incredibly simple because Reddit has a (mostly) <a href="/r/?url=http%3A%2F%2Fwww.reddit.com%2Fdev%2Fapi" data-href="/r/?url=http%3A%2F%2Fwww.reddit.com%2Fdev%2Fapi" class="markup--anchor markup--p-anchor">awesome API</a>. I wrote a Node.js script to first retrieve a post sample of <em class="markup--em markup--p-em">x</em> size and then repeatedly query the API to get <em class="markup--em markup--p-em">x</em> amount of records on each post in the sample. The Reddit API has a <a href="/r/?url=https%3A%2F%2Fgithub.com%2Freddit%2Freddit%2Fwiki%2FAPI%23rules" data-href="/r/?url=https%3A%2F%2Fgithub.com%2Freddit%2Freddit%2Fwiki%2FAPI%23rules" class="markup--anchor markup--p-anchor">rate limit</a> of one request every two seconds so after taking this into account, we could calculate the amount of time a survey would require and thus manipulate the variables to run over <em class="markup--em markup--p-em">x</em> amount of time. The equation is as follows where <em class="markup--em markup--p-em">t </em>is time, <em class="markup--em markup--p-em">s </em>is the post sample size and <em class="markup--em markup--p-em">r </em>is the records per post and 2 is the time between requests.</p><figure name="818e" class="graf--figure"><a id="818e"></a><div class="aspectRatioPlaceholder is-locked" style="max-width: 190px; max-height: 28px;"><div class="aspect-ratio-fill" style="padding-bottom: 14.7%;"></div><img class="graf-image" data-image-id="0*ZWqD7IDSLJizD2_1.png" data-width="190" data-height="28" src="https://d262ilb51hltx0.cloudfront.net/max/1600/0*ZWqD7IDSLJizD2_1.png"></div><figcaption class="imageCaption">The equation to calculate the time for one survey.</figcaption></figure><p name="9077" class="graf--p"><a id="9077"></a>To actually retrieve the post, I made an API call to the “new” posts on one of <em class="markup--em markup--p-em">pics, aww, wtf, funny </em>or <em class="markup--em markup--p-em">gaming</em> subreddits and selected the most commented post of the 10 posts returned. The script would iterate over the subreddits so until the sample size was reached. On the first test I noticed that this approach returned a huge amount of duplicate data so I increased the time between request on getting the samples to 30 seconds to allow for more content to flow through in the subreddits.</p><figure name="c33e" class="graf--figure"><a id="c33e"></a><div class="aspectRatioPlaceholder is-locked" style="max-width: 207px; max-height: 28px;"><div class="aspect-ratio-fill" style="padding-bottom: 13.5%;"></div><img class="graf-image" data-image-id="0*e6oETq6gjvDuWhrF.png" data-width="207" data-height="28" src="https://d262ilb51hltx0.cloudfront.net/max/1600/0*e6oETq6gjvDuWhrF.png"></div><figcaption class="imageCaption">The revised equation to account for new content.</figcaption></figure><p name="259b" class="graf--p"><a id="259b"></a>It’s not a particularly exact science but it worked.</p><h4 name="f5f1" class="graf--h4"><a id="f5f1"></a>The data</h4><p name="5fb3" class="graf--p"><a id="5fb3"></a>After tweaking the variables I ended with a sample of 220 and just over 10,000 records collected over a period of under two hours. Due to the “luck of the draw” nature of this experiment, I was fortunate enough to stumble upon four frontpage posts.</p><figure name="3296" class="graf--figure"><a id="3296"></a><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 265px;"><div class="aspect-ratio-fill" style="padding-bottom: 37.9%;"></div><img class="graf-image" data-image-id="0*K2W2GvtgqATu1z3M.jpeg" data-width="1000" data-height="379" data-action="zoom" data-action-value="0*K2W2GvtgqATu1z3M.jpeg" src="https://d262ilb51hltx0.cloudfront.net/max/1600/0*K2W2GvtgqATu1z3M.jpeg"></div><figcaption class="imageCaption">The results of the survey.</figcaption></figure><h4 name="8726" class="graf--h4 graf--last"><a id="8726"></a>Making sense of the data</h4></div></div></section>
+</section>
+<footer><p>Exported from <a href="https://medium.com">Medium</a> on January 4, 2015.</p><p><a href="https://medium.com/p/a7c833eb5ddd">View the original</a></p></footer></article>
+
+</body></html>

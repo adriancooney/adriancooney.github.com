@@ -1,0 +1,442 @@
+* { box-sizing: border-box; }
+
+body {
+	width: 100%;
+	height: 600px;
+	display: block;	
+	font-family: Georgia;
+}
+
+.column {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.tenth { width: 10%; }
+.fifth { width: 20%; }
+.quarter { width: 25%; }
+.three-tenths { width: 30%; }
+.third { width: 33.333%; }
+.two-fifths { width: 40%; }
+.half { width: 50%; }
+.three-fifths { width: 60%; }
+.two-thirds { width: 66.666%; }
+.seven-tenths { width: 70%; }
+.three-quarters { width: 75%; }
+.four-fifths { width: 80%; }
+.nine-tenths { width: 90%; }
+.full { width: 100%; }
+
+.container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+section {
+	padding: 8px;
+}
+
+h1 {
+	font-family: "Knockout Z@PP";
+	font-size: 36px;
+	font-weight: 400;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 24px 0 18px;
+}
+
+h2 {
+	font-family: "Knockout Z@PP";
+	font-weight: 500;
+	font-size: 18px;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	color: #aaa;
+	border: 1px solid #bbb;
+	border-right: none;
+	border-left: none;
+	margin: 0 0 18px;
+	padding: 6px;
+	text-align: center;
+}
+
+h3 {
+	font-family: "Proxima Nova";
+	font-weight: 100;
+	margin: 4px 0;
+}
+
+p {
+	line-height: 140%;
+}
+
+ul {
+	padding: 0 8px;
+	margin: 6px 0;
+
+	li {
+		list-style: none;
+	}
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	border-bottom: 1px solid #333;
+}
+
+.projects {
+	li {
+		margin-top: 6px;
+
+		h3 {
+			margin: 4px;
+			margin-left: 5px;
+		}
+
+		p {
+			font-family: Georgia;
+			font-style: italic;
+			font-size: 14px;
+			margin: 8px 4px;
+			color: #777;
+		}
+	}
+}
+
+.blog {
+	.post-list-small {
+		margin-top: 2px;
+		padding-top: 8px;
+		border-top: 1px solid #bbb;
+	}
+
+	.post-medium {
+		border-bottom: 1px solid #bbb;
+		padding-bottom: 12px;
+	}
+}
+
+.about {
+	img {
+		float: left;
+		border-radius: 80px;
+		width: 60px;
+		height: 60px;
+		margin: 0 12px 0 0;
+	}
+}
+
+.contact {
+	ul {
+		margin-top: 24px;
+	}
+
+	li {
+		margin: 4px;
+		margin-left: 28px;
+
+		a, span {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		a { 
+			vertical-align: top; 
+			margin-left: 12px;
+		}
+	}
+}
+
+.resume {
+
+	div {
+		text-align: center;
+	}
+
+	.thumb {
+		a { border: none;}
+
+		img {
+			width: 70%;
+		}
+	}
+
+	.download {
+		h4 {
+			font-family: "Proxima Nova";
+			font-size: 18px;
+			margin-top: 48px;
+			margin-bottom: 0;
+		}
+
+		p {
+			margin-top: 8px;
+			font-size: 14px;
+			color: #888;
+		}
+	}
+}
+
+.post {
+	header {
+		p {
+			text-align: left;
+			font-size: 16px;
+			font-family: Georgia;
+			font-style: italic;
+			color: #777;
+			margin-top: 0;
+		}
+
+		img {
+			width: 100%;
+		}
+
+		/* 
+		Not sure if I enjoy the clunky-ness of the title over the
+		image with the white text. I just don't think it suits the
+		theme.
+		h1 {
+			height: 400px;
+			position: relative;
+			background-size: 100%;
+			margin-bottom: 4px;
+
+			span {
+				text-align: left;
+				font-family: "Proxima Nova";
+				font-size: 42px;
+				text-transform: none;
+				padding: 6px 8px;
+				border-bottom: 1px solid #aaa;
+				display: inline-block;
+				width: 100%;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				color: #fff;
+				background: rgba(0,0,0,0.7);
+			}
+		}*/
+
+		h1 {
+			text-align: left;
+			font-family: "Proxima Nova";
+			font-size: 42px;
+			text-transform: none;
+			padding: 6px 8px;
+			border-bottom: 1px solid #aaa;
+			margin-bottom: 8px;
+			margin-top: 0;
+		}
+
+		h2 {
+			color: #444;
+			font-size: 22px;
+			font-family: Georgia;
+			font-style: italic;
+			text-transform: none;
+			letter-spacing: inherit;
+			text-align: left;
+			border: none;
+			padding: 8px;
+		}
+	}
+
+	article {
+		margin: 18px auto;
+		width: 90%;
+
+		p {
+			line-height: 150%;
+			font-size: 21px;
+		}
+
+		h4 {
+			font-size: 24px;
+			margin-top: 36px;
+			line-height: 150%;
+		}
+
+		figure {
+			margin: 0;
+			padding: 18px 40px;
+			text-align: center;
+
+			img {
+				width: 100%;
+			}
+
+			figcaption {
+				font-style: italic;
+				margin: 24px auto 8px;
+				color: #777;
+			}
+		}
+
+		figure.left, figure.right {
+			display: inline-block;
+		}
+
+		figure.left {
+			float: left;
+			text-align: left;
+		}
+
+		figure.right {
+			float: right;
+			text-align: right;
+		}
+
+		figure.center {
+			width: 100%;
+
+			img {
+				width: 80%;
+			}
+		}
+
+		figure.full {
+			width: 100%;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		figure.small, figure.smaller {
+			margin: 0 auto;
+			text-align: center;
+
+			img {
+				width: 60%;
+			}
+		}
+
+		figure.smaller img {
+			width: 40%;
+		}
+
+		blockquote {
+			background: #eee;
+			font-style: italic;
+			padding: 18px;
+			margin: 14px 0;
+			border: 1px solid #bbb;
+			border-left: none;
+			border-right: none;
+			line-height: 150%;
+			font-size: 20px;
+		}
+
+		pre {
+			margin: 36px 0;
+		}
+
+		code {
+			font-size: 130%;
+			color: #333;
+
+			.c1 {
+				color: #808080;
+			}
+
+			.s2 {
+				color: #619E5F;
+			}
+
+			$keyword: #BC4359;
+
+			.kd {
+				color: $keyword;
+			}
+
+			.k {
+				color: darken($keyword, 20%);
+			}
+
+			.mf, .mi {
+				color: #315E7F;
+			}
+
+			.kt {
+				color: #8A6D85;
+			}
+
+			.o {
+				color: #777;
+			}
+		}
+
+		.meta {
+			border-top: 1px solid #bbb;
+
+			p {
+				margin-top: 12px;
+				font-size: 18px;
+				font-style: italic;
+				color: #777;
+			}
+		}
+	}
+
+}
+
+.post-medium {
+	.banner {
+		padding-right: 6px;
+
+		a {
+			border: none;
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.synopsis {
+		padding-left: 12px;
+	}
+}
+
+.post-small {
+	padding: 6px;
+
+	span {
+		display: block;
+		overflow: hidden;
+		width: 100%;
+		height: 60px;
+		background-size: 100%;
+		background-position: center center;
+
+		a {
+			display: block;
+			width: 100%;
+			height: 100%;
+			border: none;
+		}
+	}
+
+	h3 {
+		line-height: 150%;
+		font-size: 96%;
+	}
+
+	&:first-child { padding-left: 0; }
+	&:last-child { padding-right: 0; }
+}
+
+.back-home {
+	display: inline-block;
+	float: left;
+	margin-top: -50px;
+}
+
+.copyright {
+	text-align: center;
+	color: #ddd;
+	margin-bottom: 32px;
+}

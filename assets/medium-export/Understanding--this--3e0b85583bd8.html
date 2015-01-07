@@ -1,0 +1,62 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Understanding ‘this’ - exported from Medium</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 20px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 18px;
+      }
+      </style></head><body><article>
+<header>
+<h1>Understanding ‘this’</h1>
+</header>
+<section data-field="subtitle">
+My take on the infamously hard concept to grasp.
+</section>
+<section data-field="body">
+<section class=" section--bottomCenter section-image--coverFade is-imageBackgrounded is-backgrounded is-darkBackgrounded section--first"><div class="section-background"contenteditable="false" data-image-id="1*V4hpjxMhYwlTeAXuTrWD9Q.png" data-width="1400" data-height="1120"><div class="section-backgroundImage"style="background-image: url(https://d262ilb51hltx0.cloudfront.net/fit/t/2000/1600/gradv/29/81/55/1*V4hpjxMhYwlTeAXuTrWD9Q.png);"></div><br></div><div class="section-coverFadePadding u-ignoreBlock"><div class="section-content" data-scroll="cover-fade"><div class="section-inner layoutSingleColumn"><h2 name="title" class="graf--h2 graf--first"><a id="title"></a>Understanding ‘this’</h2><h4 name="subtitle" class="graf--h4 graf--last"><a id="subtitle"></a>My take on the infamously hard concept to grasp.</h4></div></div></div><div class="section-captionContent u-ignoreBlock"></div></section><section name="8361" class=" section--last"><div class="section-divider layoutSingleColumn"><hr class="section-divider"></div><div class="section-content"><div class="section-inner layoutSingleColumn"><p name="416f" class="graf--p graf--first"><a id="416f"></a>I remember the days trying to grasp the concept of <em class="markup--em markup--p-em">this</em> in Javascript when I first delved into Object Oriented Programming (OOP). Admittedly, it did take me quite a while to wrap my head around the concept but I felt as though it was attributed to the reading material rather than my own learning ability. I finally understood it when I realized I had already learned the concept many years ago, just not in a <em class="markup--em markup--p-em">programming context </em>but in linguistics<em class="markup--em markup--p-em">. </em>We all understand <em class="markup--em markup--p-em">this</em>, it’s just bridging the gap that’s hard. The following post uses Javascript but the samples used are extremely basic and can be applied to all OOP languages (such as Python or Java).</p><p name="375e" class="graf--p"><a id="375e"></a>Let’s start of with a simple example.</p><blockquote name="a881" class="graf--blockquote"><a id="a881"></a>Dave has a car.<br>Dave’s car is <strong class="markup--strong markup--blockquote-strong">red</strong>. Dave’s car has <strong class="markup--strong markup--blockquote-strong">2 seats</strong>. Dave’s car is a <strong class="markup--strong markup--blockquote-strong">Mercedes</strong>. Dave’s car has <strong class="markup--strong markup--blockquote-strong">6 gears</strong>. Dave’s car can reach <strong class="markup--strong markup--blockquote-strong">60mph in 4.0 seconds.</strong></blockquote><p name="916c" class="graf--p"><a id="916c"></a>Here we have our first object, Dave’s car (Dave drives a nice car). Notice anything odd about the above paragraph? We mention “Dave” <em class="markup--em markup--p-em">six </em>times in that paragraph. We should only need to mention his name once, context and common sense should do the rest.</p><blockquote name="7e81" class="graf--blockquote"><a id="7e81"></a>Dave has a car.<br>This car is <strong class="markup--strong markup--blockquote-strong">red. </strong>This car has <strong class="markup--strong markup--blockquote-strong">2 seats. </strong>This car is a <strong class="markup--strong markup--blockquote-strong">Mercedes. </strong>This car has <strong class="markup--strong markup--blockquote-strong">6 gears. </strong>This car can reach <strong class="markup--strong markup--blockquote-strong">60mph in 4.0 seconds.</strong></blockquote><p name="7856" class="graf--p"><a id="7856"></a><em class="markup--em markup--p-em">this</em> is <strong class="markup--strong markup--p-strong">context</strong>. That’s all it is. In this example, it simply refers to Dave’s car. If we wanted to describe Matt’s car, which coincidentally is the exact same type of car as Dave’s, all we would need to do is change “Dave” to “Matt” in the first sentence and the entire rest of the paragraph switches context from Dave’s car to Matt’s car.</p><p name="01df" class="graf--p"><a id="01df"></a>Let’s take a look at some code for the above examples. Let’s create two cars, Dave’s and his friend, Kevin’s. Let’s take a look at how we would do it if we were to go by the original <strong class="markup--strong markup--p-strong">bad</strong> example above.</p><pre name="b82c" class="graf--pre"><a id="b82c"></a>function createDavesCar() {<br> var davesCar = {};<br> <br> davesCar.color = “red”;<br> davesCar.seats = 2;<br> davesCar.brand = “Mercedes”;<br> davesCar.gears = 6;<br> davesCar.zeroTo60 = 4.0;<br> <br> return davesCar;<br>}</pre><pre name="a4ee" class="graf--pre"><a id="a4ee"></a>function createKevinsCar() {<br> var kevinsCar = {};<br> <br> kevinsCar.color = “green”;<br> kevinsCar.seats = 4;<br> kevinsCar.brand = “Audi”;<br> kevinsCar.gears = 5;<br> kevinsCar.zeroTo60 = 8.0;<br> <br> return kevinsCar;<br>}</pre><pre name="58bb" class="graf--pre"><a id="58bb"></a>var davesCar = createDavesCar();<br>var kevinsCar = createKevinsCar();</pre><p name="b1c1" class="graf--p"><a id="b1c1"></a>Seems very long winded, right? Look at all that extra code that only changes <em class="markup--em markup--p-em">dave</em> to <em class="markup--em markup--p-em">kevin </em>and some values.</p><h4 name="98db" class="graf--h4"><a id="98db"></a>Enter context and <em class="markup--em markup--h4-em">this.</em></h4><p name="3366" class="graf--p"><a id="3366"></a>Let’s create a Car class:</p><pre name="1d31" class="graf--pre"><a id="1d31"></a>var Car = function(color, seats, brand, gears, zeroTo60) {<br> this.color = color;<br> this.seats = seats;<br> this.brand = brand;<br> this.gears = gears;<br> this.zeroTo60 = zeroTo60;<br>};</pre><p name="4681" class="graf--p"><a id="4681"></a>When the above function is used in conjunction with the <em class="markup--em markup--p-em">new</em> keyword (as we’ll see in the following example), it creates a new object in the background and replaces any occurrence of <em class="markup--em markup--p-em">this</em> with a reference to the newly created object. Any attributes added to <em class="markup--em markup--p-em">this</em> will be proxied or pushed onto the new, behind the scenes object. This is a feature of the language that allows you to abstract away from explicitly referencing objects by name and constantly repeating yourself to dynamically adding attributes or properties to multiple objects using the same code. Let’s create Dave and Kevin’s cars now.</p><pre name="4d8b" class="graf--pre"><a id="4d8b"></a>var davesCar = new Car(“red”, 2, “Mercedes”, 6, 4.0);<br>var kevinsCar = new Car(“green”, 4, “Audi”, 5, 8.0);</pre><p name="9789" class="graf--p"><a id="9789"></a>Now we two completely different cards generated, called <em class="markup--em markup--p-em">instances</em>, from the same code. Once you have this concept nailed down, the real power of OOP is ready to be unleashed. You define your methods context-free then invoke or call these methods with these objects as it’s context. Let’s do an example on the Car class. Say we wanted to generate a For Sale advert based on the cars details.</p><pre name="2f01" class="graf--pre"><a id="2f01"></a>Car.prototype.sell = function() {<br> return &quot;For sale: &quot;+ this.brand + &quot;, &quot;+ this.color + &quot;.&quot; +<br>   &quot;0-60 in &quot; + this.zeroTo60 + &quot;seconds.&quot;;<br>};<br> <br>davesCar.sell(); //&quot;For Sale: Mercedes, red. 0-60 in 4 seconds.&quot;</pre><p name="9961" class="graf--p"><a id="9961"></a>The above code creates a member function <em class="markup--em markup--p-em">sell</em> onto the Car class. It can be called on any instance of Car and can generate an advert based on current context, or car i.e. <em class="markup--em markup--p-em">this</em>. Member functions can call other member functions from <em class="markup--em markup--p-em">this</em>, they can set create properties too just as you&#39;d expect.</p><p name="b3bd" class="graf--p graf--last"><a id="b3bd"></a>And that’s <em class="markup--em markup--p-em">this</em> in a nutshell. It’s a pretty placeholder for the context to be switched within functions, nothing more.</p></div></div></section>
+</section>
+<footer><p>Exported from <a href="https://medium.com">Medium</a> on January 4, 2015.</p><p><a href="https://medium.com/p/3e0b85583bd8">View the original</a></p></footer></article>
+
+</body></html>

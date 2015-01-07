@@ -1,0 +1,38 @@
+---
+layout: structure
+title: Adrian Cooney
+---
+
+<div class="column full">
+	<section class="column third">
+		<h2>Projects</h2>
+		<ul class="projects">
+			{% for project in site.data.projects %}
+			<li>
+				<h3><a href="{{project.link}}">{{project.link_text}}</a></h3>
+				<p>{{project.description}}</p>
+			</li>
+			{% endfor %}
+		</ul>
+	</section><section class="column two-thirds blog">
+		<h2>Blog</h2>
+		<div class="column full">
+			{% if site.posts.size > 0 %}
+			<div class="column full post-medium">
+				<div class="column half banner">
+					<a href="{{site.posts[0].url}}"><img src="{{site.posts[0].banner}}"></a>
+				</div><div class="column half synopsis">
+					<h3><a href="{{site.posts[0].url}}">{{site.posts[0].title}}</a></h3>
+					<p>{{site.posts[0].synopsis}}</p>
+				</div>
+			</div>{% if site.posts.size > 1 %}<div class="column full post-list-small">
+				{% for post in site.posts limit:4 offset:1 %}<div class="column quarter post-small">
+					<span style="background-image:url({{post.banner}})"><a href="{{post.url}}"></a></span>
+					<h3><a href="{{post.url}}">{{post.title}}</a></h3>
+				</div>{% endfor %}
+			</div>
+			{% endif %}
+			{% endif %}
+		</div>
+	</section>
+</div>

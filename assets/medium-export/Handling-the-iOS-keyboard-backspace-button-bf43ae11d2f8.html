@@ -1,0 +1,62 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Handling the iOS keyboard backspace button - exported from Medium</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 20px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 18px;
+      }
+      </style></head><body><article>
+<header>
+<h1>Handling the iOS keyboard backspace button</h1>
+</header>
+<section data-field="subtitle">
+How to tame the sonofabitch.
+</section>
+<section data-field="body">
+<section class=" section--first"><div class="section-divider layoutSingleColumn"><hr class="section-divider"></div><div class="section-content"><div class="section-inner layoutSingleColumn"><h2 name="title" class="graf--h2 graf--first"><a id="title"></a>Handling the iOS keyboard backspace button</h2><h4 name="subtitle" class="graf--h4"><a id="subtitle"></a>How to tame the sonofabitch.</h4><p class="graf--p graf--empty"><br></p><p name="5547" class="graf--p"><a id="5547"></a>I recently had to create a numerical code input which consisted of six separate UITextField inputs. To make this it even remotely usable, I had to attach editing events to bump the cursor onto the next input when a number was typed. The same had to be done for the backspace but it wasn’t as easy as latching onto the Editing Changed IBAction.</p><p name="aee1" class="graf--p graf--last"><a id="aee1"></a>After quite a bit of searching, a user named Mysiaq on StackOverflow posted this underrated <a href="/r/?url=http%3A%2F%2Fstackoverflow.com%2Fa%2F14999873%2F916553" data-href="/r/?url=http%3A%2F%2Fstackoverflow.com%2Fa%2F14999873%2F916553" class="markup--anchor markup--p-anchor">snippet</a>. He mentions overriding the UITextField deleteBackward method to trigger a backspace press event. Brilliant. So I got to work fitting it into my code.</p></div></div></section><section name="d1b0" class=" section--last"><div class="section-divider layoutSingleColumn"><hr class="section-divider"></div><div class="section-content"><div class="section-inner layoutSingleColumn"><p name="95b7" class="graf--p graf--first graf--last"><a id="95b7"></a>To understand it, some digging around is required first. First of all, I used Xcode’s excellent “Jump to definition” feature. Take a look at the UITextField’s interface and you’ll see it implements the UITextInput protocol. This protocol prototypes (the correct verb?) the <em class="markup--em markup--p-em">-(void) deleteBackward</em> responder which is what were going to latch our callback onto. Let’s start by creating a new class in Xcode.</p></div></div></section>
+</section>
+<footer><p>Exported from <a href="https://medium.com">Medium</a> on January 4, 2015.</p><p><a href="https://medium.com/p/bf43ae11d2f8">View the original</a></p></footer></article>
+
+</body></html>

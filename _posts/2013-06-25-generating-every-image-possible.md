@@ -1,0 +1,51 @@
+---
+layout: post
+title: Generating every image possible.
+subtitle: Or limiting the infinite.
+synopsis: Imagine owning every photo that has ever been taken and that ever will be taken. This post analyzes that statement and produces some ridiculous notions.
+banner: /assets/image/posts/limiting-the-infinite/cover.jpeg
+---
+
+<section>
+    <p>Imagine owning every photo that has ever been taken and that ever will be taken. To accustom your mind to the immensity of this concept, these photos will include a photo of you at every moment in your life at every possible angle. Now expand that to every living and dead person ever been on this planet. Add all plants, insects, animals, forests, mountains, rivers, deserts, cities. Now add every planet, star and moon that exists in this universe. Now include <em>photos of these photos</em> at every possible angle at every possible position in the universe. Even every CAPTCHA you've ever encountered.</p>
+    <p>Phew. Sounds like an infinite amount of photos, right? <em>It's not.</em> It may be an extremely, extremely, <em>extremely</em> huge number but it's not infinite and is <em>technically</em> achievable.</p>
+    <figure class="left">
+        <img src="/assets/image/posts/limiting-the-infinite/0*OYbGFU7SZab5Yku4.jpeg">
+    </figure>
+    <p>Take the image to the left for an example. It's a 300x300 image consisting of 90,000 pixels in total. Each one of these pixels has 16,581,375 possible colors to choose from. The picture's size is 130KB. The pixels in the image on the left is just one possible combination that a 300x300 image can make up. Let's take a look at all the possible combinations, or at least the numbers behind them.</p>
+</section>
+<section>
+    <h4>The numbers</h4>
+    <p>To calculate the amount of images, we'll be using <a target="_blank" href="http://en.wikipedia.org/wiki/Permutation" rel="nofollow">Permutations</a>. Specifically the formula <em>n^r</em> where <em>n</em> in our case is the amount of colors (255^3) and <em>r</em> is the amount of pixels (width*height).</p>
+    <p>For a 300x300 images with a full RGB color range, n reaches 16,581,375 and r is 90,000. Wolfram Alpha gives us this.</p>
+    <figure class="center">
+        <img src="/assets/image/posts/limiting-the-infinite/0*ta6E_2loXnbxDyv5.png">
+    </figure>
+    <p>That's a lot of images. At 130 KB per image, that's 8.4*10^649755 petabytes of storage required. After doing some ridiculous calculations, we end up unfeasible amount of data that we would never be able to physically store.</p>
+    <figure class="center">
+        <img src="/assets/image/posts/limiting-the-infinite/0*MDWMdMDvId46APj_.png">
+        <figcaption>Some ridiculous calculations on the amount of physical space required in suns to store the images.</figcaption>
+    </figure>
+    <h4>The Generation</h4>
+    <p>The actual image generation is even more painful. It's like trying to unlock that old combination lock stuck on your suitcase but instead of 9 possible numbers on 3 discs, you have 16,581,375 possible numbers on 90,000 discs. Once you start the generation process, it would take an incredibly long time before you see any results that aren't partially blank or just noise.</p>
+    <figure>
+        <img src="/assets/image/posts/limiting-the-infinite/0*UUahIdK9RLvf1yIE.jpeg">
+    </figure>
+    <p>At today's standards with the latest SSD and GPU, you could probably generate and write ~500mb per second which is, with a filesize of 130KB, ~4000 300x300 images per second. This would take a cosy 7.46 * 10^649754 years to complete. I know what you're thinking, all of these numbers are so completely fargone and that it's just a futile exercise even contemplating attempting such a feat. Well, one, it's food for thought and two, what if we tweaked the numbers to be something more manageable?</p>
+    <h4>Tweaking the variables</h4>
+    <p>We have two variables involved in this system. One is the length of the side of the image and the other is the amount of colors. (colors)^(side). Increasing the length of the side exponentially increases the amount of images to be generated which is unfortunate because although it may mean more content within the images, it also pushes it further and further away from the reality of what's achievable. Here's pretty poor 3D graph partially demonstrating what I'm talking about.</p>
+    <figure class="right">
+        <img src="/assets/image/posts/limiting-the-infinite/0*5pMotHiI_teDgEXq.gif">
+        <figcaption>3D graph from Wolfram Alpha</figcaption>
+    </figure>
+    <p><em>x^y</em> is the graph plotted. On the <em>x</em> we have the increase of colors from 0 to 16 and on the <em>y</em> we have the increase in the side length from 0 to 100 pixels. That's 1.5 * 10^12041 of 100x100 images with <em>just 16 colors. </em>As you can see, any change in the variables results in a massive increase in the amount of images to be produced. However, we'll march on with 100x100 images with a 16 color grayscale palette because it would be the absolute minimum for anything discernable to be produced with these variables.</p>
+    <h4>What can you fit in a black and white 100x100 pixel image?</h4>
+    <p>Quite a lot infact but it's all about perspective. Definitely enough room to distinguish a face or animal and enough to permit some fun and experimentation of all kinds.</p>
+    <figure>
+        <img src="https://d262ilb51hltx0.cloudfront.net/max/2000/0*-J1J-g6KsoBXdTxv.png">
+    </figure>
+    <p>So let's get down to the hard facts. With <strong>16 colors</strong> and <strong>100x100 pixels</strong>, we have (16)^(100^2) which is <strong>1.58426 * 10^12041 images</strong> of an average size of <strong>15KB</strong>. With an average write speed of <strong>500mb/s</strong>, we can generate 512000/15 which is <strong>~34000 images per second</strong>. It would take one machine running 24/7 for <strong>1.59 * 10^12018 <em>years</em></strong> to generate those images. To generate it in our lifetime, it would take a cool <strong>2.65 * 10^12016 machines 60 years to complete</strong>.</p>
+</section>
+<section>
+    <p>The whole notion is pretty ridiculous. What do you do once you have those absurdly large volumes of images? How do you make sense of them would be the real question. However, I like to think of it as putting a cap on what previously seemed to be an infinite number, limiting infinity if you will. Who knows, maybe some program like this already exists that harvests images of everything, at every possible moment. Actually sounds familiar, doesn&#39;t it?</p>
+</section>

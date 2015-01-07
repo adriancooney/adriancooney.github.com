@@ -1,0 +1,26 @@
+---
+layout: structure
+---
+<div class="post">
+  <!-- Clunky title
+  <header>
+    <h1 style="background-image: url({{page.banner}})"><span>{{ page.title }}</span></h1>
+   	<h2>{{ page.subtitle }}</h2>
+  </header> 
+  -->
+
+  <header>
+    <img src="{{page.banner}}">
+    <h1>{{ page.title }}</h1>
+   	<h2>{{ page.subtitle }}</h2>
+  </header>
+
+  <article>
+  {{ content }}
+
+  <div class="meta">
+	<p>Posted on {{ page.date | date: "%b %-d, %Y" }}. {% if page.banner_attribution %}Image: <a href="{{ page.banner_attribution.link }}">{{ page.banner_attribution.text}}</a>{% endif %}</p>
+  </div>
+  </article>
+
+</div>

@@ -1,0 +1,23 @@
+# Site settings
+title: Adrian Cooney
+email: cooney.adrian@gmail.com
+description: "The portfolio of Adrian Cooney"
+baseurl: ""
+twitter_username: adrian_cooney
+github_username: adriancooney
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:title
+exclude: [node_modules, Gulpfile.js, package.json]
+
+kramdown:
+  input: GFM
+
+defaults:
+  -
+    scope:
+      path: ""      # empty string for all files
+      type: posts    # limit to posts
+    values:
+      is_post: true # automatically set is_post=true for all posts

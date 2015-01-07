@@ -1,0 +1,62 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Movie plots, literally. - exported from Medium</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 20px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 18px;
+      }
+      </style></head><body><article>
+<header>
+<h1>Movie plots, literally.</h1>
+</header>
+<section data-field="subtitle">
+Cinematography; let’s graph it.
+</section>
+<section data-field="body">
+<section class=" section--bottomCenter section-image--coverFade is-imageBackgrounded is-backgrounded is-darkBackgrounded section--first"><div class="section-background"contenteditable="false" data-image-id="1*um4vkeC6WVRdrYeMLOUy8Q.png" data-width="600" data-height="600" data-filter="grey"><div class="section-backgroundImage"style="background-image: url(https://d262ilb51hltx0.cloudfront.net/fit/t/2000/1600/desat/multiply/grey/overlay/grey/gradv/29/81/55/1*um4vkeC6WVRdrYeMLOUy8Q.png);"></div><br></div><div class="section-coverFadePadding u-ignoreBlock"><div class="section-content" data-scroll="cover-fade"><div class="section-inner layoutSingleColumn"><h2 name="title" class="graf--h2 graf--first"><a id="title"></a>Movie plots, literally.</h2><h4 name="subtitle" class="graf--h4 graf--last"><a id="subtitle"></a>Cinematography; let’s graph it.</h4></div></div></div><div class="section-captionContent u-ignoreBlock"></div></section><section name="eee3" class=" section--last"><div class="section-divider layoutSingleColumn"><hr class="section-divider"></div><div class="section-content"><div class="section-inner layoutSingleColumn"><p name="c534" class="graf--p graf--first"><a id="c534"></a>So recently I became intrigued with the audio waveform, the spiky bar you see on sites like SoundCloud, of some my favorite songs. It’s a beautiful, raw depiction of music. It’s gives you a quick and powerful insight into the sound. After an all night film binge on Netflix, I decided in a tired, popcorned haze to plot films in a similar manner. Instead of audio frequencies, the color profiles of select frames throughout the film would make for an interesting substitute. It was understood previous that no discernable insight could be made from the output, but pretty graphs you can hang on the wall. To just see the graphs, skip the below (I know that’s what I would do).</p><h4 name="6754" class="graf--h4"><a id="6754"></a>Getting the data</h4><p name="9309" class="graf--p"><a id="9309"></a>Extracting the data was done through <em class="markup--em markup--p-em">ffmpeg</em> and Node.js, a decision I later regretted because there was <em class="markup--em markup--p-em">much better</em> APIs in other languages. However, I mustered on and developed a quick, <em class="markup--em markup--p-em">streaming</em> interface with <em class="markup--em markup--p-em">ffmpeg. </em>Once the script was together, I scraped through my (small) local film library of my favourites (and Scott Pilgrim vs the World), saved the color data and moved onto plotting.</p><h4 name="caf8" class="graf--h4"><a id="caf8"></a>Plotting the data</h4><p name="dacb" class="graf--p"><a id="dacb"></a>This bit was fun. Utilizing the extremely handy <em class="markup--em markup--p-em">node-canvas</em>, all the drawing is done with the brower’s canvas API but with node. Once the grapher is created, each film is plugged into it and spit out into a folder, automatically. It’s pretty sweet seeing them all fly out in their colorful way.</p><h4 name="ba59" class="graf--h4"><a id="ba59"></a>The Graphs</h4><p name="bf2c" class="graf--p"><a id="bf2c"></a>After some playful experimentation with different graphers, I found the waveform brightness graphs to be pretty much the most useless out of the three I produced. They showed barely any information about the film but I included them anyway because they look sorta cool. The most striking graphs were the “movie discs”, as I like to call them. You can quickly see the main color scheme and dark/light points in the film. The beginning of the film is the outer ring and time continues inward. After the discs, you can see the the barcode graphs which are similar to the discs but with time progressing horizontally.</p></div><div class="section-inner sectionLayout--outsetColumn"><figure name="8331" class="graf--figure postField--outsetCenterImage"><a id="8331"></a><div class="aspectRatioPlaceholder is-locked" style="max-width: 960px; max-height: 1270px;"><div class="aspect-ratio-fill" style="padding-bottom: 132.29999999999998%;"></div><img class="graf-image" data-image-id="1*JuzAxl4jjRuXEzWEL-07kg.jpeg" data-width="960" data-height="1270" src="https://d262ilb51hltx0.cloudfront.net/max/2000/1*JuzAxl4jjRuXEzWEL-07kg.jpeg"></div><figcaption class="imageCaption">Film “discs”</figcaption></figure><figure name="8a81" class="graf--figure postField--outsetCenterImage"><a id="8a81"></a><div class="aspectRatioPlaceholder is-locked" style="max-width: 960px; max-height: 1648px;"><div class="aspect-ratio-fill" style="padding-bottom: 171.70000000000002%;"></div><img class="graf-image" data-image-id="1*QxvYEeW6iGSspJoTt8COXA.jpeg" data-width="960" data-height="1648" src="https://d262ilb51hltx0.cloudfront.net/max/2000/1*QxvYEeW6iGSspJoTt8COXA.jpeg"></div><figcaption class="imageCaption">Film “barcodes”</figcaption></figure><figure name="1759" class="graf--figure postField--outsetCenterImage"><a id="1759"></a><div class="aspectRatioPlaceholder is-locked" style="max-width: 960px; max-height: 1261px;"><div class="aspect-ratio-fill" style="padding-bottom: 131.4%;"></div><img class="graf-image" data-image-id="1*YPRqN4XC8D_plIZspiDI2w.jpeg" data-width="960" data-height="1261" src="https://d262ilb51hltx0.cloudfront.net/max/2000/1*YPRqN4XC8D_plIZspiDI2w.jpeg"></div><figcaption class="imageCaption">Film “waveforms”</figcaption></figure></div><div class="section-inner layoutSingleColumn"><h4 name="6770" class="graf--h4"><a id="6770"></a>Thanks for reading</h4><p name="9ba5" class="graf--p graf--last"><a id="9ba5"></a>The code used to generate the data, plot the results and all the individual graphs are available <a target="_blank" href="http://github.com/adriancooney/movie-plots" data-href="http://github.com/adriancooney/movie-plots" class="markup--anchor markup--p-anchor" rel="nofollow">here on Github</a>. There was a ton more films I wanted to graph but I just don’t have the internet connection or bandwidth to do it. Feel free to try it out at home with your favourites and submit a pull request. I’m on <a target="_blank" href="http://twitter.com/adrian_cooney" data-href="http://twitter.com/adrian_cooney" class="markup--anchor markup--p-anchor" rel="nofollow">Twitter too</a>.</p></div></div></section>
+</section>
+<footer><p>Exported from <a href="https://medium.com">Medium</a> on January 4, 2015.</p><p><a href="https://medium.com/p/8b8243f6f3f">View the original</a></p></footer></article>
+
+</body></html>

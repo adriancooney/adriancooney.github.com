@@ -10,6 +10,7 @@ var path = require("path"),
 	sfx = require("sfx"),
 	notifier = require("node-notifier");
 
+
 /**
  * Create a static server.
  */

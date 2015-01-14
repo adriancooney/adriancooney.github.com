@@ -9,7 +9,7 @@ var path = require("path"),
 	express = require("express"),
 	sfx = require("sfx"),
 	notifier = require("node-notifier");
-
+ 
 
 /**
  * Create a static server.

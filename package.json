@@ -4,6 +4,9 @@
   "description": "Portfolio",
   "main": "src/index.js",
   "author": "Adrian Cooney <cooney.adrian@gmail.com>",
+  "scripts": {
+    "build": "gulp build"
+  },
   "license": "MIT",
   "devDependencies": {
     "express": "^4.4.4",

@@ -442,4 +442,8 @@ a {
 	text-align: center;
 	color: #ddd;
 	margin-bottom: 32px;
+
+	a {
+		border-color: inherit;
+	}
 }

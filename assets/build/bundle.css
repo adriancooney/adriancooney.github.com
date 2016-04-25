@@ -1,21 +1,18 @@
 @font-face {
   font-family: 'Title';
-  src: url('/assets/fonts/title/title.eot') format('embedded-opentype');
+  src: url("/assets/fonts/title/title.eot") format("embedded-opentype");
   font-weight: normal;
   font-style: normal; }
-
 @font-face {
   font-family: 'Title';
-  src: url('/assets/fonts/title/title.otf') format('opentype'), url('/assets/fonts/title/title.woff') format('woff'), url('/assets/fonts/title/title.ttf') format('truetype'), url('/assets/fonts/title/title.svg#title') format('svg');
+  src: url("/assets/fonts/title/title.otf") format("opentype"), url("/assets/fonts/title/title.woff") format("woff"), url("/assets/fonts/title/title.ttf") format("truetype"), url("/assets/fonts/title/title.svg#title") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 @font-face {
   font-family: 'Read';
-  src: url('/assets/fonts/read/read.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/read/read.otf') format('opentype'), url('/assets/fonts/read/read.woff') format('woff'), url('/assets/fonts/read/read.ttf') format('truetype'), url('/assets/fonts/read/read.svg#Read') format('svg');
+  src: url("/assets/fonts/read/read.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/read/read.otf") format("opentype"), url("/assets/fonts/read/read.woff") format("woff"), url("/assets/fonts/read/read.ttf") format("truetype"), url("/assets/fonts/read/read.svg#Read") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 * {
   box-sizing: border-box; }
 
@@ -175,32 +172,32 @@ a {
   color: #888; }
 
 .post header {
-  /* 
-		Not sure if I enjoy the clunky-ness of the title over the
-		image with the white text. I just don't think it suits the
-		theme.
-		h1 {
-			height: 400px;
-			position: relative;
-			background-size: 100%;
-			margin-bottom: 4px;
-
-			span {
-				text-align: left;
-				font-family: "Read";
-				font-size: 42px;
-				text-transform: none;
-				padding: 6px 8px;
-				border-bottom: 1px solid #aaa;
-				display: inline-block;
-				width: 100%;
-				position: absolute;
-				left: 0;
-				bottom: 0;
-				color: #fff;
-				background: rgba(0,0,0,0.7);
-			}
-		}*/ }
+  		/* 
+  		Not sure if I enjoy the clunky-ness of the title over the
+  		image with the white text. I just don't think it suits the
+  		theme.
+  		h1 {
+  			height: 400px;
+  			position: relative;
+  			background-size: 100%;
+  			margin-bottom: 4px;
+  
+  			span {
+  				text-align: left;
+  				font-family: "Read";
+  				font-size: 42px;
+  				text-transform: none;
+  				padding: 6px 8px;
+  				border-bottom: 1px solid #aaa;
+  				display: inline-block;
+  				width: 100%;
+  				position: absolute;
+  				left: 0;
+  				bottom: 0;
+  				color: #fff;
+  				background: rgba(0,0,0,0.7);
+  			}
+  		}*/ }
   .post header p {
     text-align: left;
     font-size: 16px;
@@ -349,3 +346,7 @@ a {
   text-align: center;
   color: #ddd;
   margin-bottom: 32px; }
+  .copyright a {
+    border-color: inherit; }
+
+/*# sourceMappingURL=bundle.css.map */

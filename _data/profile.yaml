@@ -1,10 +1,9 @@
-photo: /assets/image/Profile.jpg
+photo: /assets/image/Profile-2.jpg
 about: >
   My name is Adrian Cooney. I'm a developer, designer
-  and entrepreneur from Ireland. I'm a 3rd year
-  Computer Science student in <a href="http://www.Nuigalway.ie/">NUI Galway</a>.
-  I like to make apps for the web, iOS and more recently, the Oculus Rift.
-
+  and entrepreneur from Ireland currently in my final year of a Computer
+  Science in from <a target="_blank" href="http://www.nuigalway.ie">NUI Galway</a>.
+  I like to make APIs and User Interfaces for the web.
 
 # Contact
 email: cooney.adrian@gmail.com

@@ -3,8 +3,8 @@ layout: structure
 title: Adrian Cooney
 ---
 
-<div class="column full">
-	<section class="column third">
+<section class="box">
+	<section class="third">
 		<h2>Projects</h2>
 		<ul class="projects">
 			{% for project in site.data.projects %}
@@ -14,25 +14,27 @@ title: Adrian Cooney
 			</li>
 			{% endfor %}
 		</ul>
-	</section><section class="column two-thirds blog">
+	</section>
+	<section class="flex blog">
 		<h2>Blog</h2>
-		<div class="column full">
-			{% if site.posts.size > 0 %}
-			<div class="column full post-medium">
-				<div class="column half banner">
-					<a href="{{site.posts[0].url}}"><img src="{{page.image_assets}}/posts/{{site.posts[0].name}}/Cover-small.jpg"></a>
-				</div><div class="column half synopsis">
-					<h3><a href="{{site.posts[0].url}}">{{site.posts[0].title}}</a></h3>
-					<p>{{site.posts[0].synopsis}}</p>
-				</div>
-			</div>{% if site.posts.size > 1 %}<div class="column full post-list-small">
-				{% for post in site.posts limit:4 offset:1 %}<div class="column quarter post-small">
+		<div class="box post-medium">
+			<div class="flex banner">
+				<a href="{{site.posts[0].url}}"><img src="{{page.image_assets}}/posts/{{site.posts[0].name}}/Cover-small.jpg"></a>
+			</div>
+			<div class="flex synopsis">
+				<h3><a href="{{site.posts[0].url}}">{{site.posts[0].title}}</a></h3>
+				<p>{{site.posts[0].synopsis}}</p>
+			</div>
+		</div>
+		{% if site.posts.size > 1 %}
+		<div class="box post-list-small">
+			{% for post in site.posts limit:4 offset:1 %}
+				<div class="flex post-small">
 					<span style="background-image:url({{page.image_assets}}/posts/{{post.name}}/Cover-small.jpg)"><a href="{{post.url}}"></a></span>
 					<h3><a href="{{post.url}}">{{post.title}}</a></h3>
-				</div>{% endfor %}
-			</div>
-			{% endif %}
-			{% endif %}
+				</div>
+			{% endfor %}
 		</div>
+		{% endif %}
 	</section>
-</div>
+</section>
